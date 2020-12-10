@@ -19,7 +19,7 @@ async function checkUrl(
             onSuccess();
         } else {
             setTimeout(() => {
-                console.log("text not detected. Trying again...");
+                console.log(`${checkValue} not detected. Trying again...`);
                 console.log("Attempt #", attempt);
                 console.log("");
                 attempt++;
