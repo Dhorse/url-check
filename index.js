@@ -22,7 +22,7 @@ const type = {
     },
 };
 
-/** Let's do this */
+/** Start */
 (async function () {
     const choice = await promptly.choose(
         "select a choice (disc, digital, test)",
