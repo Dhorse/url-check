@@ -1,0 +1,16 @@
+{
+  "name": "web-search",
+  "version": "0.0.6",
+  "description": "A barebones, web text serach application.",
+  "main": "index.js",
+  "author": "Matthew Lennington",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "open": "^7.3.0",
+    "promptly": "^3.2.0"
+  },
+  "scripts": {
+    "watch": "node index"
+  }
+}
