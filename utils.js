@@ -10,12 +10,18 @@ const axios = require("axios").default;
 async function checkUrl(
     url,
     checkValue,
+    contains,
     checkInterval,
     onSuccess,
     attempt = 1
 ) {
     axios.get(url).then((response) => {
-        if (response.data.indexOf(checkValue) > 0) {
+        if (contains == true && response.data.indexOf(checkValue) > 0) {
+            onSuccess();
+        } else if (
+            contains == false &&
+            response.data.indexOf(checkValue) == -1
+        ) {
             onSuccess();
         } else {
             setTimeout(() => {
@@ -24,7 +30,14 @@ async function checkUrl(
                 console.log("");
                 attempt++;
 
-                checkUrl(url, checkValue, checkInterval, onSuccess, attempt);
+                checkUrl(
+                    url,
+                    checkValue,
+                    contains,
+                    checkInterval,
+                    onSuccess,
+                    attempt
+                );
             }, checkInterval);
         }
     });
